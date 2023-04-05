@@ -1,0 +1,20 @@
+{% extends 'blog/exempl.html' %}
+
+{% block title%}Новости сайта{% endblock %}
+
+{% block content%}
+
+    <div class="features">
+        <h1>Новости сайта</h1>
+        <p>Новостная страница</p>
+        <button class="btn btn-warning">Пока просто кнопка</button>
+        {% for el in novost %}
+            <div> class="alert alert-warning">
+                <h3>{{ el.author }}</h3>
+                <p>{{ el.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {{ novost }}
+    {% include 'blog/innput.html'%}
+{% endblock %}
